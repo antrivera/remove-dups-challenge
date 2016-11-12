@@ -16,6 +16,7 @@ get '/emails' do
 end
 
 post '/unique_emails' do
+  request.body.rewind
   json = JSON.parse(request.body.read, symbolize_names: true)
   remove_duplicates(json[:emails]).to_json
 end

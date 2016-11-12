@@ -2,11 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="util.js"></script>
     <title>Remove Duplicates</title>
   </head>
   <body>
     <div>
-      <h1>It works!</h1>
+      <h1>Remove Duplicate Emails</h1>
+      <form action="/emails" method="get">
+        <label for="unique"> Number of unique email addresses to create:
+          <input type="text" name="unique" value="">
+        </label>
+        <input type="submit" value="Submit">
+      </form>
+
+      <br />
+
+      <form onsubmit="return submitForm()" method="post">
+        <label for="remove_duplicates"> Paste the JSON list of emails here to
+          be sent in the POST body:
+          <br />
+          <textarea name="removeDuplicates" id="email-list" rows="8" cols="40"></textarea>
+        </label>
+        <br />
+        <input type="submit" value="Submit">
+      </form>
     </div>
   </body>
 </html>
