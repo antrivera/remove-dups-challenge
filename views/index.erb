@@ -7,8 +7,27 @@
     <title>Remove Duplicates</title>
   </head>
   <body>
-    <div>
+    <header>
       <h1>Remove Duplicate Emails</h1>
+      <section>
+        <h2>How to use this demo:</h2>
+        <ol>
+          <li>
+            To create the email list enter the number of <em>unique</em>
+            email addresses that you desire.  The generated email list will be twice the size
+            specified, with the extra addresses all being duplicates (e.g. to
+            obtain a list of 100,000 email addresses containing 50% duplicates, simply
+            enter 50,000).  Order will be randomized.
+          </li>
+          <li>
+            Copy and paste the resulting email list into the textarea to obtain
+            the email list with all duplicates removed.
+          </li>
+        </ol>
+      </section>
+    </header>
+
+    <div class="input-form-container">
       <form action="/emails" method="get">
         <label for="unique"> Number of unique email addresses to create:
           <input type="text" name="unique" value="">
@@ -27,6 +46,13 @@
         <br />
         <input type="submit" value="Submit">
       </form>
+    </div>
+    
+    <div class="results-container">
+      <h2> Results: </h2>
+      <div style="width: 70%px; word-wrap: break-word;">
+        <code id="results">Unique emails will go here. </code>
+      </div>
     </div>
   </body>
 </html>

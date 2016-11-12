@@ -1,5 +1,13 @@
 function submitForm() {
-  const data = {emails: JSON.parse($('#email-list').val())};
+  let jsonList = [];
+
+  try {
+    jsonList = JSON.parse($('#email-list').val());
+  } catch(e) {
+    return false;
+  }
+  let data = {emails: jsonList};
+
   $.ajax({
     method: 'POST',
     url: '/unique_emails',
@@ -7,7 +15,7 @@ function submitForm() {
     data: JSON.stringify(data),
     dataType: 'json',
     contentType: 'application/json',
-    success: function(res) { console.log(res);},
+    success: function(res) { $('#results').html(JSON.stringify(res)); },
     error: function(res) {console.log('error');}
   });
 
