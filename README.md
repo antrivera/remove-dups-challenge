@@ -8,7 +8,7 @@ Requirements:
 
 ## How to Use
 
-The function can be tested through the simple front-end interface, or by sending a `POST` request to `localhost:4567/unique_emails` in the following JSON format:
+The function can be tested through the simple front-end interface, or by sending a `POST` request to `http://remove-duplicates-demo.herokuapp.com/unique_emails` in the following JSON format:
 
 ```
   { "emails":
@@ -19,7 +19,7 @@ The function can be tested through the simple front-end interface, or by sending
   }
 ```
 
-A sample email list may be obtained by sending a `GET` request to `localhost:4567/email` with a key-value pair query parameter of `unique=n`, where n is the number of unique email addresses that is desired.  Note that the returned list is twice this size, with the extra elements consisting of duplicates. Order is randomized.
+A sample email list may be obtained by sending a `GET` request to `http://remove-duplicates-demo.herokuapp.com/emails` with a key-value pair query parameter of `unique=n`, where n is the number of unique email addresses that is desired.  Note that the returned list is twice this size, with the extra elements consisting of duplicates. Order is randomized.
 
 ## Implementation
 
@@ -127,4 +127,4 @@ remove_duplicates:   0.050000   0.000000   0.050000 (  0.058108)
 
 ## Deployment
 
-I used Sinatra for my simple server and Heroku for deployment.  The front-end makes use of an AJAX call to obtain and display the unique email addresses.  Some error checking was included to ensure valid inputs, but there is no size limit on the requests at the moment so problems will be encountered if requesting extremely large lists.  However, 100,000 emails are handled without problems. 
+I used Sinatra for my simple server and Heroku for deployment.  The front-end makes use of an AJAX call to obtain and display the unique email addresses.  Some error checking was included to ensure valid inputs, but there is no size limit on the requests at the moment so problems will be encountered if requesting extremely large lists.  However, 100,000 emails are handled without problems.
